@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfiguration.EnabledAutoConfiguration=\
+com.example.bootstartdemo.configuration.BackgroundConfiguration
