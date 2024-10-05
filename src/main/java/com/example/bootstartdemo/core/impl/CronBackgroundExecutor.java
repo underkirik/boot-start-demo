@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@ConditionalOnExpression("'${background-executor.default-executor}'.equals('cron)' and ${background-executor.enabled:true}")
+@ConditionalOnExpression("'${background-executor.default-executor}'.equals('cron') and ${background-executor.enabled:true}")
 public class CronBackgroundExecutor implements BackGroundTaskExecutor {
 
   private final BackgroundTaskProperties backgroundTaskProperties;

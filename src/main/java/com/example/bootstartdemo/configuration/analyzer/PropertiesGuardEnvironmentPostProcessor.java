@@ -30,14 +30,11 @@ public class PropertiesGuardEnvironmentPostProcessor implements EnvironmentPostP
     if (isInvalidTime) {
       throw new BackgroundTaskPropertyException(
           "Property background-executor.default-executor must be cron or time!");
-    }
-    if (Objects.equals(defaultExecutor, "cron") && !StringUtils.hasText(cronExpression)) {
+    } else if (Objects.equals(defaultExecutor, "cron") && !StringUtils.hasText(cronExpression)) {
       throw new BackgroundTaskPropertyException("Invalid cron expression for 'cron' type!");
-    }
-    if (Objects.equals(defaultExecutor, "time") && !StringUtils.hasText(timeValue)) {
+    } else if (Objects.equals(defaultExecutor, "time") && !StringUtils.hasText(timeValue)) {
       throw new BackgroundTaskPropertyException("Invalid time value for 'time' type!");
-    }
-    if (!StringUtils.hasText(tasksSize) || tasksSize.matches("-?\\d*")
+    } else if (!StringUtils.hasText(tasksSize) || !tasksSize.matches("-?\\d*")
         || Integer.parseInt(tasksSize) <= 0) {
       throw new BackgroundTaskPropertyException("invalid tasks size value!");
     }

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-@ConditionalOnExpression("'${background-executor.default-executor}'.equals('time)' and ${background-executor.enabled:true}")
+@ConditionalOnExpression("'${background-executor.default-executor}'.equals('time') and ${background-executor.enabled:true}")
 public class TimeBackGroundTaskExecutor implements BackGroundTaskExecutor {
 
   private final BackgroundTaskProperties backgroundTaskProperties;
